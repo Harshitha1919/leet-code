@@ -10,38 +10,37 @@
  */
 class Solution {
     public ListNode swapNodes(ListNode head, int k) {
-        ListNode temp = head;
-        int count = 0;
-
-        // ✅ Count the total number of nodes
-        while (temp != null) {
+        ListNode temp=head;
+        int count=0;
+        ListNode temp2=head;
+        while(temp!=null){
             count++;
-            temp = temp.next;
+            temp=temp.next;
         }
-
-        // ✅ Reset temp back to head
-        temp = head;
-        int c = 0;
-        ListNode start = null;
-        ListNode end = null;
-
-        // ✅ Traverse again to find kth node and (count-k+1)th node
-        while (temp != null) {
+        temp=head;
+        int c=0;
+        int value=0;
+        int ans1=0;
+        int ans2=0;
+        ListNode start=null;
+        ListNode end=null;
+        while(temp!=null){
             c++;
-            if (c == k) {       // directly kth node
-                start = temp;
+            if(c==k){
+             start=temp;
+             
             }
-            if (c == (count - k + 1)) {   // (count-k+1)th node
-                end = temp;
+            if(c==count-k+1){
+                
+                end=temp;
+               
+
             }
-            temp = temp.next;
+            temp=temp.next;
         }
-
-        // ✅ Swap values
-        int t = start.val;
-        start.val = end.val;
-        end.val = t;
-
+        int t=start.val;
+        start.val=end.val;
+        end.val=t;
         return head;
     }
 }
