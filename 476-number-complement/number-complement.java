@@ -1,10 +1,18 @@
 class Solution {
     public int findComplement(int num) {
-        StringBuilder binary = new StringBuilder();
-        while (num > 0) {
-            binary.insert(0, (num % 2 == 0) ? '1' : '0');
-            num /= 2;
+       StringBuilder sb = new StringBuilder();
+        while(num>0){
+            int rem=num%2;
+            if(rem==0){
+                sb.append(1);
+            }
+            else{
+                sb.append(0);
+            }
+            num=num/2;
         }
-        return Integer.parseInt(binary.toString(), 2);
+        sb.reverse();
+        int num1 = Integer.parseInt(sb.toString(), 2);
+        return num1;
     }
 }
