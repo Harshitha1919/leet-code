@@ -1,31 +1,19 @@
 class Solution {
     public int smallestNumber(int n) {
-       
-        int flag=0;
-        int k=0;
-       while(flag==0){
+        while (true) {
+            int k = n;
+            boolean allOnes = true;
 
-          k=n;
-        while(k>0){
-            int rem=k%2;
-            if(rem==0){
-                flag=0;
-              n++;
+            while (k > 0) {
+                if (k % 2 == 0) {
+                    allOnes = false;
+                    break;
+                }
+                k = k / 2;
+            }
 
-            break;
-            }
-            else{
-                k=k/2;
-                flag=1;
-            }
-           
+            if (allOnes) return n;
+            n++;
         }
-         
-        
-       }  
-       
-          return n; 
-   
-       
     }
 }
