@@ -4,7 +4,7 @@ class Solution {
         for(int i=0;i<s.length();i++){
             if(!stack.isEmpty() && stack.peek()==s.charAt(i)){
                 stack.pop();
-                continue;
+            
             }
             else{
                 stack.push(s.charAt(i));
