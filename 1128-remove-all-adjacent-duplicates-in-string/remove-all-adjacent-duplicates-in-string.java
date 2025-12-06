@@ -10,10 +10,11 @@ class Solution {
                 stack.push(s.charAt(i));
             }
         }
-        String x="";
-        while(stack.size()>0){
-            x=stack.pop()+x;
+        StringBuilder result = new StringBuilder();
+        for (char c : stack) {
+            result.append(c);
         }
-        return x;
+
+        return result.toString();
     }
 }
