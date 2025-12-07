@@ -4,19 +4,17 @@ class Solution {
         StringBuilder sb2=new StringBuilder();
 
         for(int i=0;i<s.length();i++){
-           if(s.charAt(i)!=' ' && i!=s.length()-1){
+           if(s.charAt(i)!=' '){
             sb2.append(s.charAt(i));
            }
-           else if(i==s.length()-1){
-            sb2.append(s.charAt(i));
-             sb.append(sb2.reverse().toString());
-           }
+           
            else{
             sb.append(sb2.reverse().toString());
             sb.append(' ');
             sb2.setLength(0);
            }
         }
+        sb.append(sb2.reverse());
       
         return sb.toString();
     }
