@@ -7,7 +7,7 @@ class Solution {
             total += Math.min(gap, duration);
         }
 
-        // add duration for last attack
+        
         return total + duration;
     }
 }
