@@ -29,8 +29,8 @@ class Solution {
         }
          for(int i=0;i<t.length();i++){
             char c=t.charAt(i);
-            if(f2[c-'a']>0){
-                 f2[c-'a']=f2[c-'a']-1;
+            if(f[c-'a']>0){
+                 f[c-'a']=f[c-'a']-1;
                 
             }
             else{
