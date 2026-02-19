@@ -9,9 +9,7 @@ class Solution {
                 }
         }
         
-   if(ans[ans.length - 1].charAt(ans[ans.length - 1].length() - 1) 
-    != ans[0].charAt(0)){
-
+        if(ans[ans.length-1].charAt(ans[ans.length-1].length()-1)!=ans[0].charAt(0)){
             return false;
         }
           return true;
