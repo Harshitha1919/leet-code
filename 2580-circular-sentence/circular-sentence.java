@@ -8,9 +8,10 @@ class Solution {
                      return false;
                 }
         }
-         String a=ans[ans.length-1];
-                String b=ans[0];
-        if(a.charAt(a.length()-1)!=b.charAt(0)){
+        
+   if(ans[ans.length - 1].charAt(ans[ans.length - 1].length() - 1) 
+    != ans[0].charAt(0)){
+
             return false;
         }
           return true;
