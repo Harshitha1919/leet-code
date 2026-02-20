@@ -15,9 +15,9 @@ class Solution {
                     l++;
                    
                }
-             
+               if(hs.get(s.charAt(r))<=2){
                 max1=Math.max(max1,r-l+1);
-              
+               }
         }
         return max1;
     }
