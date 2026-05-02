@@ -39,7 +39,7 @@ class Solution {
             }
 
             // ✅ fix: valid + must change
-            if (count == 0 && changed) {
+            if (count == 0 && changed==true) {
                 c++;
             }
         }
