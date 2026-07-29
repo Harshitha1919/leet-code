@@ -1,12 +1,15 @@
 class Solution {
     public int maxProduct(int n) {
-        int c=0;
-        int h=n;
-        while(n>0){
-           int rem=n%10;
-            c++;
-            n=n/10;
-        }
+        // int c=0;
+         int h=n;
+        // while(n>0){
+        //    int rem=n%10;
+        //     c++;
+        //     n=n/10;
+        // }
+        
+        String k=Integer.toString(n);
+        int c=k.length();
 int a[]=new int[c];
         for(int i=0;i<c;i++){
             a[i]=h%10;
