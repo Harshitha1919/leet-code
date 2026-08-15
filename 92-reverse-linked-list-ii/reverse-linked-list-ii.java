@@ -26,7 +26,7 @@ class Solution {
 
         ListNode start = (left == 1) ? head : temp.next;
         ListNode head2 = start;
- 
+     
         int count2=left;
         ListNode prev=null;
         while( count2<=right){
