@@ -1,28 +1,27 @@
 class Solution {
-    public List<List<Integer>> combinationSum(int[] candidates, int target) {
-           List<List<Integer>> result = new ArrayList<>();
-        Arrays.sort(candidates); // optional, helps pruning
-        backtrack(candidates, target, 0, new ArrayList<>(), result);
-        return result;
-    }
-    
-    private void backtrack(int[] candidates, int target, int start, List<Integer> current, List<List<Integer>> result) {
-        if (target == 0) {
-            // found a valid combination
-            result.add(new ArrayList<>(current));
+    List<List<Integer>> arr = new ArrayList<>();
+
+    public void sum(int[] c, int target, int sum, int start, List<Integer> ans) {
+        
+        if (sum == target) {
+            arr.add(new ArrayList<>(ans));
             return;
         }
-        
-        for (int i = start; i < candidates.length; i++) {
-            if (candidates[i] > target) {
-                // no need to continue, as array is sorted
-                break;
-            }
-            
-            current.add(candidates[i]); // choose the number
-            backtrack(candidates, target - candidates[i], i, current, result); // reuse the same number
-            current.remove(current.size() - 1); // backtrack
-        }
 
+        for (int i = start; i < c.length; i++) {
+            
+            if (sum + c[i] <= target) {
+                ans.add(c[i]);
+
+                sum(c, target, sum + c[i], i, ans);
+
+                ans.remove(ans.size() - 1);
+            }
+        }
+    }
+
+    public List<List<Integer>> combinationSum(int[] c, int target) {
+        sum(c, target, 0, 0, new ArrayList<>());
+        return arr;
     }
 }
