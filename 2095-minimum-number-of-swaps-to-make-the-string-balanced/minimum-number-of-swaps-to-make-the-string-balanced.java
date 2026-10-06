@@ -17,6 +17,8 @@ class Solution {
             }
             arr[right]=']';
             arr[left]='[';
+            st.push('[');
+            left++;
             count++;
            }
         }
